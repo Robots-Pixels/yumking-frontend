@@ -120,6 +120,11 @@ export default function SignUp() {
 
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0); // Remonte tout en haut
+  }, []);
+
+
   return (
     <div>
       <Hero

@@ -14,21 +14,22 @@ import { FaEye, FaEyeSlash, FaCalendar, FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setTemporaryBooking } from "../../redux/booking/bookingSlice.js";
-// import food1 from "../assets/food1.svg"
-// import food2 from "../assets/food2.svg"
+import food1 from "../assets/food1.svg"
+import food2 from "../assets/food2.svg"
 import food3 from "../assets/food3.svg"
-// import food4 from "../assets/food4.svg"
+import food4 from "../assets/food4.svg"
 import servicePlate from "../assets/servicePlate.png"
+import staff from "../assets/staffe.svg"
 import { Link } from "react-router-dom";
 import BouncingArrow from "../Components/BouncingArrow.jsx";
 import { 
-  faPlateWheat,
   faBowlFood,
   faUtensils,
   faBowlRice,
   faCake
 } from '@fortawesome/free-solid-svg-icons'
 import MenuItem from '../Components/MenuItem.jsx'
+import { setLastPage } from "../../redux/user/userSlice.js";
 
 export default function Home() {
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -50,6 +51,73 @@ export default function Home() {
   const [transform, setTransform] = useState("translateY(0)");
   const [error, setError] = useState(null);
   const phoneUtilInstance = libphonenumber.PhoneNumberUtil.getInstance();
+
+  const [menuItem, setMenuItems] = useState([
+    {
+      imageUrl: "https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2023/12/thumb.jpg",
+      price: "12.99",
+      name: "Roasted Beef",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
+      mark: "5.0",
+      n_comments: "1.6k"
+    },
+    {
+      imageUrl: "https://images.pexels.com/photos/262945/pexels-photo-262945.jpeg",
+      price: "9.99",
+      name: "Grilled Chicken",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
+      mark: "4.8",
+      n_comments: "1.2k"
+    },
+    {
+      imageUrl: "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg",
+      price: "8.50",
+      name: "Veggie Burger",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
+      mark: "4.5",
+      n_comments: "980"
+    },
+    {
+      imageUrl: "https://images.pexels.com/photos/2498440/pexels-photo-2498440.jpeg",
+      price: "3.99",
+      name: "Fries",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
+      mark: "4.2",
+      n_comments: "2.1k"
+    },
+    {
+      imageUrl: "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg",
+      price: "6.99",
+      name: "Caesar Salad",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
+      mark: "4.7",
+      n_comments: "1.5k"
+    },
+    {
+      imageUrl: "https://images.pexels.com/photos/769969/pexels-photo-769969.jpeg",
+      price: "10.99",
+      name: "Spaghetti Bolognese",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
+      mark: "4.9",
+      n_comments: "2.4k"
+    },
+    {
+      imageUrl: "https://images.pexels.com/photos/2568587/pexels-photo-2568587.jpeg",
+      price: "14.99",
+      name: "Steak Frites",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
+      mark: "5.0",
+      n_comments: "3.0k"
+    },
+    {
+      imageUrl: "https://images.pexels.com/photos/11710531/pexels-photo-11710531.jpeg",
+      price: "7.50",
+      name: "Chicken Nuggets",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
+      mark: "4.6",
+      n_comments: "1.8k"
+    }
+  ]);
   
   useEffect(() => {
     if (temporaryBooking) {
@@ -103,7 +171,6 @@ export default function Home() {
       [e.target.id]: e.target.value,
     });
 
-    console.log(formData);
   };
 
     const getCca2 = (countryCommon) => {
@@ -191,12 +258,17 @@ export default function Home() {
     }
   ];
 
+  useEffect(() => {
+    window.scrollTo(0, 0); // Remonte tout en haut
+  }, []);
+
+
   return (
     <div className="w-full">
       <Hero
         isHome={true}
         title={"Home"}
-        height={"120vh"}
+        height={"100vh"}
         imageUrl={
           "https://buildeo.co.uk/wp-content/uploads/2021/12/Modern-Fast-food-Restaurant-Interior-Design-and-Renovation.jpg"
         }
@@ -206,7 +278,7 @@ export default function Home() {
 
         <div className="flex flex-col md:flex-row gap-8">
           
-          <div className="flex flex-col bg-[#ffe186] py-4 px-5 rounded-t-4xl">
+          <div className="flex flex-1 flex-col bg-[#ffe186] py-4 px-5 rounded-t-4xl">
 
             <div className="flex items-center justify-between">
               <div className="bg-[#FFC107] text-white p-3 w-16 rounded-full">
@@ -219,61 +291,61 @@ export default function Home() {
 
             <div className="flex flex-col gap-2">
                 <h2 className="text-2xl">Fresh Tasty Meals</h2>
-                <p className="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <p className="text-xl">Made with high-quality ingredients for great flavor. </p>
             </div>
 
           </div>
 
-          <div className="flex flex-col bg-[#ffe186] py-4 px-5 rounded-t-4xl">
+          <div className="flex flex-1 flex-col bg-[#ffe186] py-4 px-5 rounded-t-4xl">
 
 <div className="flex items-center justify-between">
   <div className="bg-[#FFC107] text-white p-3 w-16 rounded-full">
-      <img className="" src={food3}/>
+      <img className="" src={food2}/>
   </div>
   
-  <h2 className="text-5xl text-[#fff]">01</h2>
+  <h2 className="text-5xl text-[#fff]">02</h2>
 
 </div>
 
 <div className="flex flex-col gap-2">
-    <h2 className="text-2xl">Fresh Tasty Meals</h2>
-    <p className="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <h2 className="text-2xl">Quick Service</h2>
+    <p className="text-xl"> Get your food fast and fresh! </p>
 </div>
 
           </div>
 
-          <div className="flex flex-col bg-[#ffe186] py-4 px-5 rounded-t-4xl">
+          <div className="flex flex-1 flex-col bg-[#ffe186] py-4 px-5 rounded-t-4xl">
 
 <div className="flex items-center justify-between">
   <div className="bg-[#FFC107] text-white p-3 w-16 rounded-full">
-      <img className="" src={food3}/>
+      <img className="text-white" src={food4}/>
   </div>
   
-  <h2 className="text-5xl text-[#fff]">01</h2>
+  <h2 className="text-5xl text-[#fff]">03</h2>
 
 </div>
 
 <div className="flex flex-col gap-2">
-    <h2 className="text-2xl">Fresh Tasty Meals</h2>
-    <p className="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <h2 className="text-2xl">Affordable Prices </h2>
+    <p className="text-xl">Delicious meals at great value. </p>
 </div>
 
           </div>
 
-          <div className="flex flex-col bg-[#ffe186] py-4 px-5 rounded-t-4xl">
+          <div className="flex flex-1 flex-col bg-[#ffe186] py-4 px-5 rounded-t-4xl">
 
 <div className="flex items-center justify-between">
   <div className="bg-[#FFC107] text-white p-3 w-16 rounded-full">
-      <img className="" src={food3}/>
+      <img className="text-white" src={food1}/>
   </div>
   
-  <h2 className="text-5xl text-[#fff]">01</h2>
+  <h2 className="text-5xl text-[#fff]">04</h2>
 
 </div>
 
 <div className="flex flex-col gap-2">
-    <h2 className="text-2xl">Fresh Tasty Meals</h2>
-    <p className="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <h2 className="text-2xl">Convenient Locations</h2>
+    <p className="text-xl"> Easy to find, easy to enjoy. </p>
 </div>
 
           </div>
@@ -311,7 +383,7 @@ export default function Home() {
       About Us
     </h2>
 
-    <h3 className='text-5xl'>
+    <h3 className='text-4xl md:text-5xl'>
       We Are Always <span className='text-[#FFC107]'>Here To Serve You</span> Fresh Food
     </h3>
 
@@ -334,14 +406,14 @@ export default function Home() {
       </div>
 
       <div className='flex gap-3 bg-[#ffc10781] items-start p-3 rounded-t-3xl'>
-        <div className='bg-white flex items-center justify-center w-[100px] p-2 rounded-full my-3'>
-          <img className='w-full h-full' src={servicePlate} alt="" />
+        <div className='bg-white text-[#FFC107] flex items-center justify-center w-[100px] p-2 rounded-full my-3'>
+          <img className='w-full h-full text-[#FFC107]' src={staff} alt="" />
         </div>
 
         <div className='flex flex-col'>
-          <h3>Best Quality Food
+          <h3>Best Services
           </h3>
-          <p className='text-[#4e4637]'>At our restaurant, freshness is our promise.</p>
+          <p className='text-[#4e4637]'>Friendly staff ensure a smooth dining experience.</p>
         </div>
       </div>
 
@@ -375,7 +447,7 @@ export default function Home() {
                 Our Menu
               </h2>
 
-              <h3 className='text-5xl'>
+              <h3 className='text-4xl md:text-5xl'>
                 Let's Check <span className='text-[#FFC107]'>Our Menu</span>
               </h3>
           </div>
@@ -409,15 +481,9 @@ export default function Home() {
         </section>
 
         <section className='menu-items grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5'>
-          <MenuItem/>
-          <MenuItem/>
-          <MenuItem/>
-          <MenuItem/>
-
-          <MenuItem/>
-          <MenuItem/>
-          <MenuItem/>
-          <MenuItem/>
+            {menuItem.map((item) => (
+              <MenuItem imageUrl={item.imageUrl} price={item.price} name={item.name} description={item.description} mark={item.mark} n_comments={item.n_comments} key={item.name} />
+            ))}
         </section>
 
       </div>
@@ -437,7 +503,7 @@ export default function Home() {
               From 1992
             </h2>
 
-            <h3 className='text-5xl'>
+            <h3 className='text-4xl md:text-5xl'>
               Let's Check <span className='text-[#FFC107]'>Our History</span>
             </h3>
 
@@ -447,7 +513,7 @@ export default function Home() {
             <p className="text-[#4e4637]">
             Whether you're grabbing a quick bite on the go or enjoying a meal with friends and family, we’re here to serve up satisfaction—one delicious bite at a time!
             </p>
-
+{/* 
             <div className='flex flex-col sm:flex-row gap-5'>
 
               <div className='flex gap-3 bg-[#ffc10781] items-start p-3 rounded-t-3xl'>
@@ -456,7 +522,7 @@ export default function Home() {
                 </div>
 
                 <div className='flex flex-col'>
-                  <h3>Best Quality Food
+                  <h3>Perfect service
                   </h3>
                   <p className='text-[#4e4637]'>At our restaurant, freshness is our promise.</p>
                 </div>
@@ -478,7 +544,7 @@ export default function Home() {
                 
               </div>
 
-            </div>
+            </div> */}
 
             <div className='w-[170px]'>
               <Link to={"/menu"} className="p-3 group bg-[#FFC107] rounded-3xl flex items-center gap-3 cta-button relative">
@@ -515,8 +581,8 @@ export default function Home() {
             </div>
 
             <div className='flex flex-col justify-between '>
-              <h2 className='text-5xl text-[#FFC107]'>50</h2>
-              <b>+ Items Of Foods</b>
+              <h2 className='text-5xl text-[#FFC107]'>3500</h2>
+              <b>+ Satisfied Clients</b>
             </div>
 
           </div>
@@ -527,8 +593,8 @@ export default function Home() {
             </div>
 
             <div className='flex flex-col justify-between '>
-              <h2 className='text-5xl text-[#FFC107]'>50</h2>
-              <b>+ Items Of Foods</b>
+              <h2 className='text-5xl text-[#FFC107]'>04</h2>
+              <b>Prices</b>
             </div>
 
           </div>
@@ -539,8 +605,8 @@ export default function Home() {
             </div>
 
             <div className='flex flex-col justify-between '>
-              <h2 className='text-5xl text-[#FFC107]'>50</h2>
-              <b>+ Items Of Foods</b>
+              <h2 className='text-5xl text-[#FFC107]'>05</h2>
+              <b>+ Countries</b>
             </div>
 
           </div>
@@ -566,7 +632,7 @@ export default function Home() {
               Why Choose Us
             </h2>
 
-            <h3 className='text-5xl'>
+            <h3 className='text-4xl md:text-5xl'>
               We provide <span className='text-[#FFC107]'>Quality Food</span>
             </h3>
 
@@ -751,37 +817,37 @@ export default function Home() {
             Our Partners
           </h2>
 
-          <h3 className='text-5xl text-center mb-15'>
+          <h3 className=' text-4xl md:text-5xl text-center mb-15'>
             Here Are <span className='text-[#FFC107]'>Our Awesome</span> Partners 
           </h3>
 
           <div className="flex justify-between items-center gap-20 overflow-hidden">
           
             <div className="w-30">
-              <img src={food3} alt="" />
+              <img src={"/p1.svg"} alt="" />
             </div>
 
             <div className="w-30">
-              <img src={food3} alt="" />
+              <img src={"/p2.svg"} alt="" />
             </div>
 
             <div className="w-30">
-              <img src={food3} alt="" />
+              <img src={"/p3.svg"} alt="" />
             </div>
 
             <div className="w-30">
-              <img src={food3} alt="" />
+              <img src={"/p4.svg"} alt="" />
             </div>
 
             <div className="flex justify-between items-center gap-20 overflow-hidden two-last-partner">
 
               <div className="w-30">
-                <img src={food3} alt="" />
+                <img src={"/p5.svg"} alt="" />
               </div>
 
               <div className="last-partner">
                 <div className="w-30">
-                  <img src={food3} alt="" />
+                  <img src={"/p6.svg"} alt="" />
                 </div>
               </div>
 

@@ -159,7 +159,13 @@ export default function Booking() {
     navigate("/menu");
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0); // Remonte tout en haut
+  }, []);
+
+
   return (
+    
     <div className="relative">
 
       <Hero

@@ -56,7 +56,7 @@ export default function Hero(params) {
         {isHome ? (
           (
             <>
-            <div className="flex text-center items-center justify-center absolute left-1/2 -translate-x-1/2 w-7xl h-full mt-20 mx-auto px-5 sm:px-12 mb-20 home-hero-wraper">
+            <div className="flex text-center items-center justify-center absolute left-1/2 -translate-x-1/2 w-7xl h-full md:mt-20 mx-auto px-5 md:px-12 mb-20 home-hero-wraper">
                 
                 <div className="absolute md:w-full px-5 sm:px-12 h-[50%] flex items-center justify-between">
 

@@ -174,6 +174,11 @@ export default function SignIn() {
     setConnexionMethod(connexionMethod);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0); // Remonte tout en haut
+  }, []);
+
+
   return (
     <div>
       <Hero

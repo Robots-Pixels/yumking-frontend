@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Hero from '../Components/Hero'
-import { faMapLocationDot,faUser, faEnvelope, faPen, faMessage } from '@fortawesome/free-solid-svg-icons'
+import { faMapLocationDot,faUser, faEnvelope, faPen, faMessage, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 import MapComponent from '../Components/MapComponent'
 
 export default function Contact() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Remonte tout en haut
+  }, []);
+
+
   return (
     <div>
         <Hero
@@ -33,11 +39,11 @@ export default function Contact() {
 
                 <div className='contact-left-div'>
                   <div className='text-3xl p-2 rounded-full text-[#FFC107]'>
-                    <FontAwesomeIcon icon={faMapLocationDot}/>
+                    <FontAwesomeIcon icon={faPhone}/>
                   </div>
                   <div className='flex flex-col gap-2'>
-                    <h2>Office Address</h2>
-                    <p className='text-[#4e4637] text-[0.9rem]'>9JM3+W4J, Sème Podji Sème, Podji</p>
+                    <h2>Phone Number</h2>
+                    <p className='text-[#4e4637] text-[0.9rem]'>+229 0140 - 8204 - 93</p>
                   </div>
                 </div>
 
@@ -46,8 +52,8 @@ export default function Contact() {
                     <FontAwesomeIcon icon={faMapLocationDot}/>
                   </div>
                   <div className='flex flex-col gap-2'>
-                    <h2>Office Address</h2>
-                    <p className='text-[#4e4637] text-[0.9rem]'>9JM3+W4J, Sème Podji Sème, Podji</p>
+                    <h2>Open Hours</h2>
+                    <p className='text-[#4e4637] text-[0.9rem]'>Every Day 08h - 22h</p>
                   </div>
                 </div>
 
@@ -56,7 +62,7 @@ export default function Contact() {
                     <FontAwesomeIcon icon={faMapLocationDot}/>
                   </div>
                   <div className='flex flex-col gap-2'>
-                    <h2>Office Address</h2>
+                    <h2>Contact Us</h2>
                     <p className='text-[#4e4637] text-[0.9rem]'>9JM3+W4J, Sème Podji Sème, Podji</p>
                   </div>
                 </div>

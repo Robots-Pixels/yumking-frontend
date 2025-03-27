@@ -6,7 +6,6 @@ import {
   faPhoneVolume,
   faClock,
   faSignOut,
-  faSearch,
   faBarsStaggered,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -171,10 +170,6 @@ export default function Header() {
           </div>
 
           <div className="flex gap-8">
-            <button className="text-xl">
-              {" "}
-              <FontAwesomeIcon icon={faSearch} />
-            </button>
             <Link onClick={() => {setCurrentMenuLink("Booking")}} to={"/booking"} className="p-3 group bg-[#FFC107] rounded-3xl flex items-center gap-3 cta-button relative">
               <span className="absolute inset-0 bg-[#c1564c] scale-0 group-hover:scale-100 transition-transform duration-300 rounded-full"></span>
               <span className="z-10">Book Now</span>
