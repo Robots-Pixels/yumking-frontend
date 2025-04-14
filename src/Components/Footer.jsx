@@ -1,5 +1,5 @@
 import React from 'react'
-import bgFooter from "../assets/bgFooter.jpg"
+import bgFooter from "../assets/bgFooter.webp"
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationArrow, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'

@@ -8,8 +8,8 @@ export default function Hero(params) {
     const [sliderContent, setSliderContent] = useState({
       images: [
         imageUrl, 
-        "https://www.tinbuilding.com/wp-content/uploads/2024/09/download-6-scaled-920x518.webp",
-        "https://www.ille-et-vilaine-tourisme.bzh/app/uploads/bretagne-35/2020/06/thumbs/restaurant-jason-leung-unsplash-1920x960.jpg"
+        "/slider1.webp",
+        "/slider2.jpg"
       ],
       title: ["Welcome To YumKings", "Welcome To YumKings", "Welcome To YumKings"],
       subtitle: ["Your Favorite Food Gets Even Yummier", "Your Favorite Food Gets Even Yummier", "Your Favorite Food Gets Even Yummier"] ,
@@ -58,7 +58,7 @@ export default function Hero(params) {
             <>
             <div className="flex text-center items-center justify-center absolute left-1/2 -translate-x-1/2 w-7xl h-full md:mt-20 mx-auto px-5 md:px-12 mb-20 home-hero-wraper">
                 
-                <div className="absolute md:w-full px-5 sm:px-12 h-[50%] flex items-center justify-between">
+                <div className="hidden md:absolute md:w-full px-5 sm:px-12 h-[50%] md:flex items-center justify-between">
 
                   <button
                   onClick={() => handleSliderClick("forward")}
@@ -75,7 +75,7 @@ export default function Hero(params) {
 
                 </div>
 
-                <div className="flex flex-col justify-center items-center gap-8 w-[80%]">
+                <div className="flex flex-col justify-center items-center gap-8 w-full md:w-[80%]">
                   <h1 className='section-title text-5xl md:text-6xl text-[#FFC107]'>
                     {sliderContent.title[contentIndex]}
                   </h1>
@@ -88,8 +88,8 @@ export default function Hero(params) {
                     {sliderContent.description[contentIndex]}
                   </h3>
 
-                  <div className="flex gap-10 z-20">
-                    <Link className="py-3 px-6 group bg-[#FFC107] rounded-3xl cta-button text-white" to={"/about"}>
+                  <div className="flex gap-3 md:gap-10 z-20 text-sm md:text-xl">
+                    <Link to={"/about"} className="py-3 px-6 group bg-[#FFC107] rounded-3xl cta-button text-white">
                       About More
                     </Link>
 

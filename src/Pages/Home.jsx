@@ -54,7 +54,7 @@ export default function Home() {
 
   const [menuItem, setMenuItems] = useState([
     {
-      imageUrl: "https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2023/12/thumb.jpg",
+      imageUrl: "/menu1.avif",
       price: "12.99",
       name: "Roasted Beef",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
@@ -62,7 +62,7 @@ export default function Home() {
       n_comments: "1.6k"
     },
     {
-      imageUrl: "https://images.pexels.com/photos/262945/pexels-photo-262945.jpeg",
+      imageUrl: "/menu2.webp",
       price: "9.99",
       name: "Grilled Chicken",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
@@ -70,7 +70,7 @@ export default function Home() {
       n_comments: "1.2k"
     },
     {
-      imageUrl: "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg",
+      imageUrl: "/menu3.webp",
       price: "8.50",
       name: "Veggie Burger",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
@@ -78,7 +78,7 @@ export default function Home() {
       n_comments: "980"
     },
     {
-      imageUrl: "https://images.pexels.com/photos/2498440/pexels-photo-2498440.jpeg",
+      imageUrl: "/menu4.webp",
       price: "3.99",
       name: "Fries",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
@@ -86,7 +86,7 @@ export default function Home() {
       n_comments: "2.1k"
     },
     {
-      imageUrl: "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg",
+      imageUrl: "/menu5.webp",
       price: "6.99",
       name: "Caesar Salad",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
@@ -94,7 +94,7 @@ export default function Home() {
       n_comments: "1.5k"
     },
     {
-      imageUrl: "https://images.pexels.com/photos/769969/pexels-photo-769969.jpeg",
+      imageUrl: "/menu6.webp",
       price: "10.99",
       name: "Spaghetti Bolognese",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
@@ -102,7 +102,7 @@ export default function Home() {
       n_comments: "2.4k"
     },
     {
-      imageUrl: "https://images.pexels.com/photos/2568587/pexels-photo-2568587.jpeg",
+      imageUrl: "/menu7.webp",
       price: "14.99",
       name: "Steak Frites",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
@@ -110,7 +110,7 @@ export default function Home() {
       n_comments: "3.0k"
     },
     {
-      imageUrl: "https://images.pexels.com/photos/11710531/pexels-photo-11710531.jpeg",
+      imageUrl: "/menu8.webp",
       price: "7.50",
       name: "Chicken Nuggets",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut accusantium pariatur odio quo.",
@@ -270,7 +270,7 @@ export default function Home() {
         title={"Home"}
         height={"100vh"}
         imageUrl={
-          "https://buildeo.co.uk/wp-content/uploads/2021/12/Modern-Fast-food-Restaurant-Interior-Design-and-Renovation.jpg"
+          "/homehero.jpg"
         }
       />
 
@@ -494,7 +494,7 @@ export default function Home() {
         <div className='flex flex-col sm:flex-col md:flex-row-reverse gap-10 items-center justify-between flex-wrap h-full w-full'>
 
           <div className='section-image flex w-full gap-x-4 md:flex-1 h-[330px] sm:h-[550px] md:min-w-sm relative'>
-            <div className='self-start bg-center bg-cover w-full h-full rounded-4xl' style={{backgroundImage: `url(https://buildeo.co.uk/wp-content/uploads/2021/12/Modern-Fast-food-Restaurant-Interior-Design-and-Renovation.jpg)`}}>
+            <div className='self-start bg-center bg-cover w-full h-full rounded-4xl' style={{backgroundImage: `url(/homehero.jpg)`}}>
             </div>
           </div>
 
