@@ -8,8 +8,8 @@ import {
   FaInstagram,
   FaTwitter,
   FaLinkedin,
-  FaWhatsapp,
 } from "react-icons/fa";
+import { faContactBook } from '@fortawesome/free-regular-svg-icons'
 
 export default function Footer() {
   return (
@@ -80,7 +80,7 @@ export default function Footer() {
 
                   <div className='flex flex-col gap-4'>
 
-                    <div className='flex items-start gap-4'>
+                    <div className='flex items-center md:items-start gap-4'>
                       <div className='bg-[#FFC107] text-white p-2 flex items-center justify-center rounded-full'>
                         <FontAwesomeIcon className='text-xl' icon={faLocationArrow} />
                       </div>
@@ -92,29 +92,19 @@ export default function Footer() {
 
                     </div>
 
-                    <div className='flex items-start gap-4'>
+                    <div className='flex items-center md:items-start gap-4'>
                       <div className='bg-[#FFC107] text-white p-2 flex items-center justify-center rounded-full'>
-                        <FontAwesomeIcon className='text-xl' icon={faLocationArrow} />
+                        <FontAwesomeIcon className='text-xl' icon={faContactBook} />
                       </div>
 
                       <div>
-                        <h2>Our Address</h2>
-                        <h2 className='w-50'>9JM3+W4J, Sème Podji Sème, Podji</h2>
+                        <h2>Our Contacts</h2>
+                        <h2 className='w-50'>info@example.com</h2>
+                        <h2 className='w-50'>+229 01 40 82 04 93</h2>
                       </div>
 
                     </div>
 
-                    <div className='flex items-start gap-4'>
-                      <div className='bg-[#FFC107] text-white p-2 flex items-center justify-center rounded-full'>
-                        <FontAwesomeIcon className='text-xl' icon={faLocationArrow} />
-                      </div>
-
-                      <div>
-                        <h2>Our Address</h2>
-                        <h2 className='w-50'>9JM3+W4J, Sème Podji Sème, Podji</h2>
-                      </div>
-
-                    </div>
 
                   </div>
 

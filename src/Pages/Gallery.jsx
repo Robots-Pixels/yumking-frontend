@@ -34,7 +34,7 @@ export default function Gallery() {
             <div className="row-span-2 overflow-hidden rounded-4xl">
               <img
                 className="w-full h-full object-cover"
-                src="https://www.upmenu.com/wp-content/uploads/2021/05/11-how-to-start-a-fast-food-restaurant-fast-food-restaurant-staff.jpg"
+                src="/gallery1.webp"
                 alt="Food 1"
               />
             </div>
@@ -42,7 +42,7 @@ export default function Gallery() {
             <div className="row-span-3 overflow-hidden rounded-4xl">
               <img
                 className="w-full h-full object-cover"
-                src="https://images.pexels.com/photos/1025804/pexels-photo-1025804.jpeg"
+                src="/gallery2.webp"
                 alt="Food 2"
               />
             </div>
@@ -50,7 +50,7 @@ export default function Gallery() {
             <div className="row-span-1 overflow-hidden rounded-4xl">
               <img
                 className="w-full h-full object-cover"
-                src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg"
+                src="/gallery3.webp"
                 alt="Food 3"
               />
             </div>
@@ -58,7 +58,7 @@ export default function Gallery() {
             <div className="row-span-2 overflow-hidden rounded-4xl">
               <img
                 className="w-full h-full object-cover"
-                src="https://images.pexels.com/photos/30600496/pexels-photo-30600496/free-photo-of-in-n-out-westwood-village.jpeg"
+                src="/gallery4.webp"
                 alt="Food 4"
               />
             </div>
@@ -66,7 +66,7 @@ export default function Gallery() {
             <div className="row-span-1 overflow-hidden rounded-4xl">
               <img
                 className="w-full h-full object-cover"
-                src="https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg"
+                src="/gallery5.webp"
                 alt="Food 5"
               />
             </div>
